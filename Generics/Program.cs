@@ -48,7 +48,7 @@ namespace Generics
 
             
             var newArr = numbers.SortArray();
-            newArr = newArr.FindOdds();
+            //newArr = newArr.FindOdds();
 
             foreach(var n in newArr)
             {
