@@ -12,9 +12,9 @@ namespace Generics
             return numbers.Where(num => num % 2 != 0);
         }
 
-        public static IEnumerable<T> SortArray<T>(this IEnumerable<T> numbers)
+        public static T[] SortArray<T>(this T[] numbers)
         {
-            return numbers.OrderBy(num => num);
+            return numbers.OrderBy(num => num).ToArray();
         }
     }
 }
