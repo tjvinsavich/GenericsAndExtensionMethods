@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Generics
 {
@@ -25,12 +26,46 @@ namespace Generics
 
             var numbers = new int[] { 1, 2, 3, 4, 5, 6 };
 
+            Storage<Equipment> store1 = new Storage<Equipment>();
+            Storage<Food> store2 = new Storage<Food>();
+
+            Equipment equip1 = new Equipment();
+            store1.Bin.Add(equip1);
+            Equipment equip2 = new Equipment();
+            store1.Bin.Add(equip2);
+            Equipment equip3 = new Equipment();
+            store1.Bin.Add(equip3);
+
+            Food food1 = new Food();
+            store2.Bin.Add(food1);
+            Food food2 = new Food();
+            store2.Bin.Add(food2);
+            Food food3 = new Food();
+            store2.Bin.Add(food3);
+
+            CountToNum(1.001f);
+            CountToNum(5.6);
+
             
+            var newArr = numbers.SortArray();
+            newArr = newArr.FindOdds();
 
-
-
+            foreach(var n in newArr)
+            {
+                Console.WriteLine(n);
+            }
         }
-      
+
+        static void CountToNum<T>(T n)
+        {
+            for (int i = 0; i < Convert.ToInt32(n); i++)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine(n);
+        }
+        
+
 
         //ExtensionMethods
         //TODO Create a static class called "ExtensionMethods"
